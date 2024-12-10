@@ -1,0 +1,10 @@
+{
+  "filter_type" : "myfilter_effect",
+  "vignette_power": 0.000000,
+  "vignette_radius": 1.000000,
+  "vignette_params": [2.1343019E-4, 2.356956E-4, 0.069704, 0.18173668, 0.3018347, 0.42968196, 0.5556896, 0.4443105],
+  "vignette_data_index": 0,
+  "vignette_data_size": 65536,
+  "grain_power": 0.000000,
+  "grain_radius": 0.000000
+}
