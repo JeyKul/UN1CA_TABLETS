@@ -1,0 +1,11 @@
+<?xml version= "1.0" encoding= "UTF-8"?>
+<resources>
+    <!-- Full preview size -->
+    <local name="MAIN_FULL_PREVIEW_SIZE" value="1728x1080" />
+
+    <!-- Support voice command -->
+    <local name="SUPPORT_VOICE_COMMAND" value="false"/>
+
+    <!--Front camera landscape lens -->
+    <local name="FRONT_CAMERA_LENS_ORIENTATION" value="2"/>
+</resources>
