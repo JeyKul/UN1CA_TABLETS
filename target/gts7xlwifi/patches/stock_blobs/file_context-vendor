@@ -1,0 +1,2 @@
+/vendor/etc/vintf/compatibility_matrix\.device\.xml u:object_r:vendor_configs_file:s0
+/vendor/etc/vintf/manifest\.xml u:object_r:vendor_configs_file:s0

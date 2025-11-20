@@ -1,0 +1,2 @@
+vendor/etc/vintf/compatibility_matrix.device.xml 0 0 644 capabilities=0x0
+vendor/etc/vintf/manifest.xml 0 0 644 capabilities=0x0
