@@ -4969,7 +4969,7 @@ index f3e285e5..2653f5f4 100644
  
      sput-boolean v0, Lcom/samsung/android/service/SemService/SemServiceManager;->isSupportSemServiceManager:Z
  
--    const-string v0, "JCOP6.2U"
+-    const-string v0, "JCOP6.3U"
 +    const-string v0, ""
  
      sput-object v0, Lcom/samsung/android/service/SemService/SemServiceManager;->cosName:Ljava/lang/String;

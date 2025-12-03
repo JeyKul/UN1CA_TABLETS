@@ -41,11 +41,11 @@ if [[ "$SOURCE_PRODUCT_SHIPPING_API_LEVEL" != "$TARGET_PRODUCT_SHIPPING_API_LEVE
         "<init>()V" \
         "$SOURCE_PRODUCT_SHIPPING_API_LEVEL" \
         "$TARGET_PRODUCT_SHIPPING_API_LEVEL"
-    SMALI_PATCH "system" "system/framework/services.jar" \
-        "smali/com/android/server/knox/dar/ddar/ta/TAProxy.smali" "replace" \
-        "updateServiceHolder(Z)V" \
-        "$SOURCE_PRODUCT_SHIPPING_API_LEVEL" \
-        "$TARGET_PRODUCT_SHIPPING_API_LEVEL"
+#    SMALI_PATCH "system" "system/framework/services.jar" \
+#        "smali/com/android/server/knox/dar/ddar/ta/TAProxy.smali" "replace" \
+#        "updateServiceHolder(Z)V" \
+#        "$SOURCE_PRODUCT_SHIPPING_API_LEVEL" \
+#        "$TARGET_PRODUCT_SHIPPING_API_LEVEL"
     SMALI_PATCH "system" "system/framework/services.jar" \
         "smali/com/android/server/SystemServer.smali" "replace" \
         "startOtherServices(Lcom/android/server/utils/TimingsTraceAndSlog;)V" \
@@ -581,11 +581,11 @@ if [[ "$SOURCE_LCD_CONFIG_HFR_SUPPORTED_REFRESH_RATE" != "$TARGET_LCD_CONFIG_HFR
             "getMainInstance()Lcom/samsung/android/hardware/display/RefreshRateConfig;" \
             "$SOURCE_LCD_CONFIG_HFR_SUPPORTED_REFRESH_RATE" \
             "${TARGET_LCD_CONFIG_HFR_SUPPORTED_REFRESH_RATE//none/}"
-        SMALI_PATCH "system" "system/priv-app/SecSettings/SecSettings.apk" \
-            "smali_classes4/com/samsung/android/settings/display/SecDisplayUtils.smali" "replace" \
-            "getHighRefreshRateSupportedValues(I)[Ljava/lang/String;" \
-            "$SOURCE_LCD_CONFIG_HFR_SUPPORTED_REFRESH_RATE" \
-            "${TARGET_LCD_CONFIG_HFR_SUPPORTED_REFRESH_RATE//none/}"
+#        SMALI_PATCH "system" "system/priv-app/SecSettings/SecSettings.apk" \
+#            "smali_classes4/com/samsung/android/settings/display/SecDisplayUtils.smali" "replace" \
+#            "getHighRefreshRateSupportedValues(I)[Ljava/lang/String;" \
+#            "$SOURCE_LCD_CONFIG_HFR_SUPPORTED_REFRESH_RATE" \
+#            "${TARGET_LCD_CONFIG_HFR_SUPPORTED_REFRESH_RATE//none/}"
         SMALI_PATCH "system_ext" "priv-app/SystemUI/SystemUI.apk" \
             "smali_classes2/com/android/systemui/keyguard/KeyguardViewMediatorHelperImpl\$\$ExternalSyntheticLambda0.smali" "replace" \
             "invoke()Ljava/lang/Object;" \

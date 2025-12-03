@@ -17,7 +17,7 @@ index 31146d0d9..dd7f28129 100644
  
      invoke-static {v2, v8}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
  
--    const-string/jumbo v8, "eSE_COS: JCOP6.2U"
+-    const-string/jumbo v8, "eSE_COS: JCOP6.3U"
 +    const-string/jumbo v8, "eSE_COS: "
  
      invoke-static {v2, v8}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I

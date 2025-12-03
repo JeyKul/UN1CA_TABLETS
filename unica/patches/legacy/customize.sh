@@ -149,26 +149,26 @@ fi
 
 # Support legacy SehLights HAL (pre-API 35)
 # - Check for [lsr wD, wS, #0x18] to determine if the newer HAL is already in place
-if [ "$TARGET_PLATFORM_SDK_VERSION" -lt "35" ]; then
-    if [ -f "$WORK_DIR/vendor/bin/hw/vendor.samsung.hardware.light-service" ] && \
-            ! xxd -p -c 4 "$WORK_DIR/vendor/bin/hw/vendor.samsung.hardware.light-service" | grep -q "1853$"; then
-        PATCHED=true
-        APPLY_PATCH "system" "system/framework/services.jar" \
-            "$MODPATH/lights/services.jar/0001-Backport-legacy-SehLights-HAL-code.patch"
-    fi
-fi
+#if [ "$TARGET_PLATFORM_SDK_VERSION" -lt "35" ]; then
+#    if [ -f "$WORK_DIR/vendor/bin/hw/vendor.samsung.hardware.light-service" ] && \
+#            ! xxd -p -c 4 "$WORK_DIR/vendor/bin/hw/vendor.samsung.hardware.light-service" | grep -q "1853$"; then
+#        PATCHED=true
+#        APPLY_PATCH "system" "system/framework/services.jar" \
+#            "$MODPATH/lights/services.jar/0001-Backport-legacy-SehLights-HAL-code.patch"
+#    fi
+#fi
 
 # Ensure config_num_physical_slots is configured (pre-API 36)
 # https://android.googlesource.com/platform/frameworks/opt/telephony/+/42e37234cee15c9f3fcfac0532110abfc8843b99%5E%21/#F0
-if [ "$TARGET_PLATFORM_SDK_VERSION" -lt "36" ]; then
-    if [ ! "$(GET_PROP "ro.telephony.sim_slots.count")" ] && \
-            ! grep -q "ro.telephony.sim_slots.count" "$WORK_DIR/vendor/bin/secril_config_svc" && \
-            ! grep -q -r "config_num_physical_slots" "$WORK_DIR/vendor/overlay"; then
-        PATCHED=true
-        APPLY_PATCH "system" "system/framework/telephony-common.jar" \
-            "$MODPATH/ril/telephony-common.jar/0001-Backport-legacy-UiccController-code.patch"
-    fi
-fi
+#if [ "$TARGET_PLATFORM_SDK_VERSION" -lt "36" ]; then
+#    if [ ! "$(GET_PROP "ro.telephony.sim_slots.count")" ] && \
+#            ! grep -q "ro.telephony.sim_slots.count" "$WORK_DIR/vendor/bin/secril_config_svc" && \
+#            ! grep -q -r "config_num_physical_slots" "$WORK_DIR/vendor/overlay"; then
+#        PATCHED=true
+#        APPLY_PATCH "system" "system/framework/telephony-common.jar" \
+#            "$MODPATH/ril/telephony-common.jar/0001-Backport-legacy-UiccController-code.patch"
+#    fi
+#fi
 
 # Support legacy sdFAT kernel drivers (pre-API 35)
 # https://android.googlesource.com/platform/system/vold/+/refs/tags/android-16.0.0_r2/fs/Vfat.cpp#150
@@ -242,14 +242,14 @@ if [ -f "$WORK_DIR/system/system/bin/sbauth" ] && \
 fi
 
 # Ensure PASS support (pre-API 35)
-if [ "$TARGET_PLATFORM_SDK_VERSION" -lt "35" ]; then
-    if ! grep -q "sec_pass_data_file" "$WORK_DIR/vendor/etc/selinux/vendor_sepolicy.cil"; then
-        PATCHED=true
-        SMALI_PATCH "system" "system/framework/services.jar" \
-            "smali/com/android/server/StorageManagerService.smali" "return" \
-            'isPassSupport()Z' 'false'
-    fi
-fi
+#if [ "$TARGET_PLATFORM_SDK_VERSION" -lt "35" ]; then
+#    if ! grep -q "sec_pass_data_file" "$WORK_DIR/vendor/etc/selinux/vendor_sepolicy.cil"; then
+#        PATCHED=true
+#        SMALI_PATCH "system" "system/framework/services.jar" \
+#            "smali/com/android/server/StorageManagerService.smali" "return" \
+#            'isPassSupport()Z' 'false'
+#    fi
+#fi
 
 # Support legacy usb_notify kernel drivers (pre-API 36)
 # https://github.com/salvogiangri/UN1CA/discussions/519

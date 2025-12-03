@@ -1,0 +1,4 @@
+id=filesystem
+name=Filesystem support
+author=saadelasfur, JeyKul
+description=adds erofs support and encryption support

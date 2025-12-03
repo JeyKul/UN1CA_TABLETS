@@ -15,7 +15,7 @@ index 8b4a4c9..ebcd36e 100644
  
      sput-object v1, Lcom/android/se/internal/UtilExtension;->DUMP_ID:[B
  
--    const-string v1, "JCOP6.2U"
+-    const-string v1, "JCOP6.3U"
 -
 -    invoke-virtual {v1}, Ljava/lang/String;->isBlank()Z
 -
@@ -32,7 +32,7 @@ index 8b4a4c9..ebcd36e 100644
  
      invoke-static {v0, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
  
--    const-string v3, "eSE_COS: JCOP6.2U"
+-    const-string v3, "eSE_COS: JCOP6.3U"
 +    const-string v3, "eSE_COS: "
  
      invoke-static {v0, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
@@ -114,7 +114,7 @@ index 8b4a4c9..ebcd36e 100644
  
      invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
  
--    const-string v1, "JCOP6.2U"
+-    const-string v1, "JCOP6.3U"
 +    const-string v1, ""
  
      invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
