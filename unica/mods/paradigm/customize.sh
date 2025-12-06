@@ -45,13 +45,15 @@ ADD_TO_WORK_DIR "pa2qxxx" "system" \
     "system/etc/permissions/privapp-permissions-com.samsung.android.sead.xml" 0 0 644 "u:object_r:system_file:s0"
 ADD_TO_WORK_DIR "pa2qxxx" "system" \
     "system/priv-app/EnvironmentAdaptiveDisplay/EnvironmentAdaptiveDisplay.apk" 0 0 644 "u:object_r:system_file:s0"
-if $TARGET_LCD_SUPPORT_MDNIE_HW; then
-    APPLY_PATCH "system" "system/framework/services.jar" \
-        "$MODPATH/ead/services.jar/0001-Add-Adaptive-color-tone-feature.patch"
-else
-    APPLY_PATCH "system" "system/framework/services.jar" \
-        "$MODPATH/ead_mdnie/services.jar/0001-Add-Adaptive-color-tone-feature.patch"
-fi
+
+if [[ "$TARGET_OS_SINGLE_SYSTEM_IMAGE" != "tqssi" ]]; then
+    if $TARGET_LCD_SUPPORT_MDNIE_HW; then
+        APPLY_PATCH "system" "system/framework/services.jar" \
+            "$MODPATH/ead/services.jar/0001-Add-Adaptive-color-tone-feature.patch"
+    else
+        APPLY_PATCH "system" "system/framework/services.jar" \
+            "$MODPATH/ead_mdnie/services.jar/0001-Add-Adaptive-color-tone-feature.patch"
+    fi
 if $TARGET_COMMON_SUPPORT_DYN_RESOLUTION_CONTROL; then
     APPLY_PATCH "system" "system/priv-app/SecSettings/SecSettings.apk" \
         "$MODPATH/ead_resolution/SecSettings.apk/0001-Add-Adaptive-color-tone-feature.patch"
@@ -64,6 +66,7 @@ APPLY_PATCH "system" "system/priv-app/SettingsProvider/SettingsProvider.apk" \
 APPLY_PATCH "system_ext" "priv-app/SystemUI/SystemUI.apk" \
     "$MODPATH/ead/SystemUI.apk/0001-Add-Adaptive-color-tone-toggle.patch"
 LOG_STEP_OUT
+fi
 
 # Set AI Version to 20253 (latest)
 SET_FLOATING_FEATURE_CONFIG "SEC_FLOATING_FEATURE_COMMON_CONFIG_AI_VERSION" "20253"
