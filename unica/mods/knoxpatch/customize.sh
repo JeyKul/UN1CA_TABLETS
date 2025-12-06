@@ -27,8 +27,11 @@ APPLY_PATCH "system" "system/framework/knoxsdk.jar" \
 SMALI_PATCH "system" "system/framework/samsungkeystoreutils.jar" \
     "smali/com/samsung/android/security/keystore/AttestParameterSpec.smali" "return" \
     'isVerifiableIntegrity()Z' 'true'
+    
+if [[ "$TARGET_OS_SINGLE_SYSTEM_IMAGE" != "tqssi" ]]; then
 APPLY_PATCH "system" "system/framework/services.jar" \
     "$MODPATH/services.jar/0001-Bypass-ICD-verification.patch"
+fi
 
 # Disable SAK in DarManagerService
 APPLY_PATCH "system" "system/framework/services.jar" \
