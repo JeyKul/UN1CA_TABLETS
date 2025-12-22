@@ -1,7 +1,9 @@
 SET_PROP_IF_DIFF "vendor" "ro.security.fips.ux" "Disabled"
 
-if [[ "$TARGET_OS_SINGLE_SYSTEM_IMAGE" == "qssi" || "$TARGET_OS_SINGLE_SYSTEM_IMAGE" == "tqssi" ]]; then
+if [[ "$TARGET_OS_SINGLE_SYSTEM_IMAGE" == "qssi" ]]; then
     DONOR="a73xqxx"
+elif [[ "$TARGET_OS_SINGLE_SYSTEM_IMAGE" == "tqssi" ]]; then
+    DONOR="gta9pwifixx"
 elif [[ "$TARGET_OS_SINGLE_SYSTEM_IMAGE" == "essi" ]]; then
     DONOR="a54xnsxx"
 elif [[ "$TARGET_OS_SINGLE_SYSTEM_IMAGE" == "mssi" ]]; then

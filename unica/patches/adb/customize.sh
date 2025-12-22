@@ -25,18 +25,12 @@ SET_PROP "system" "ro.logd.kernel" "true"
 # Do not filter out Samsung processes in logs
 SET_PROP_IF_DIFF "system" "persist.log.semlevel" "0xFFFFFFFF"
 
-if [[ "$TARGET_OS_SINGLE_SYSTEM_IMAGE" == "mssi" ]]; then
-    RC_FILE="init.project.rc"
-elif [[ "$TARGET_OS_SINGLE_SYSTEM_IMAGE" == "qssi" ]]; then
-    RC_FILE="init.target.rc"
-fi
-if [ "$RC_FILE" ] && [ -f "$WORK_DIR/vendor/etc/init/hw/$RC_FILE" ]; then
-    if ! grep -q "persist.vendor.radio.port_index" "$WORK_DIR/vendor/etc/init/hw/$RC_FILE"; then
+if [ -f "$WORK_DIR/system/system/etc/init/hw/init.usb.rc" ]; then
+    if ! grep -q "persist.vendor.radio.port_index" "$WORK_DIR/system/system/etc/init/hw/init.usb.rc"; then
         {
             echo ""
             echo "on property:persist.vendor.radio.port_index=\"\""
             echo "    setprop sys.usb.config adb"
-        } >> "$WORK_DIR/vendor/etc/init/hw/$RC_FILE"
+        } >> "$WORK_DIR/system/system/etc/init/hw/init.usb.rc"
     fi
-    unset RC_FILE
 fi
