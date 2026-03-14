@@ -1,0 +1,15 @@
+/system u:object_r:system_file:s0
+/system/bin u:object_r:system_file:s0
+/system/bin/apexd u:object_r:apexd_exec:s0
+/system/bin/gsid u:object_r:gsid_exec:s0
+/system/lib u:object_r:system_lib_file:s0
+/system/lib/libandroid_servers\.so u:object_r:system_lib_file:s0
+/system/lib/libmdf\.so u:object_r:system_lib_file:s0
+/system/lib/libsqlite\.so u:object_r:system_lib_file:s0
+/system/lib/service\.incremental\.so u:object_r:system_lib_file:s0
+/system/lib64 u:object_r:system_lib_file:s0
+/system/lib64/libandroid_servers\.so u:object_r:system_lib_file:s0
+/system/lib64/libepm\.so u:object_r:system_lib_file:s0
+/system/lib64/libmdf\.so u:object_r:system_lib_file:s0
+/system/lib64/libsqlite\.so u:object_r:system_lib_file:s0
+/system/lib64/service\.incremental\.so u:object_r:system_lib_file:s0
